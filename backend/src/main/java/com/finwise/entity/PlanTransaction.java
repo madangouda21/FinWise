@@ -1,7 +1,6 @@
 package com.finwise.entity;
 
-import com.finwise.entity.FamilyProfile;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;

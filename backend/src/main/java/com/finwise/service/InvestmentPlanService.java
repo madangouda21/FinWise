@@ -3,7 +3,6 @@ package com.finwise.service;
 import com.finwise.dto.InvestmentPlanDTO;
 import com.finwise.entity.FamilyProfile;
 import com.finwise.entity.InvestmentPlan;
-import com.finwise.entity.PlanTransaction;
 import com.finwise.exception.ResourceNotFoundException;
 import com.finwise.repository.FamilyProfileRepository;
 import com.finwise.repository.InvestmentPlanRepository;
@@ -12,8 +11,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.crypto.spec.OAEPParameterSpec;
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

@@ -4,6 +4,7 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 
 @Data
@@ -140,7 +141,7 @@ public class EducationPlanDTO {
             return 0.0;
         }
 
-        double progress = futureValue.divide(inflationAdjustedCost, 4, BigDecimal.ROUND_HALF_UP)
+        double progress = futureValue.divide(inflationAdjustedCost, 4, RoundingMode.HALF_UP)
                 .multiply(BigDecimal.valueOf(100))
                 .doubleValue();
 

@@ -34,24 +34,31 @@ public class User {
     private String lastName;
 
     @Column(name = "created_date", nullable = false, updatable = false)
+    @Builder.Default
     private LocalDateTime createdDate = LocalDateTime.now();
 
     @Column(name = "last_updated_date")
+    @Builder.Default
     private LocalDateTime lastUpdatedDate = LocalDateTime.now();
 
     @Column(length = 20)
+    @Builder.Default
     private String role = "USER";
 
     @Column(name = "account_non_expired")
+    @Builder.Default
     private boolean accountNonExpired = true;
 
     @Column(name = "account_non_locked")
+    @Builder.Default
     private boolean accountNonLocked = true;
 
     @Column(name = "credentials_non_expired")
+    @Builder.Default
     private boolean credentialsNonExpired = true;
 
     @Column(name = "enabled")
+    @Builder.Default
     private boolean enabled = true;
 
     @Column(name = "image_url")

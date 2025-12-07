@@ -33,11 +33,16 @@ public class UserDTO {
     private String lastName;
 
     @Size(max = 20, message = "Role must not exceed 20 characters")
+    @Builder.Default
     private String role = "USER";
 
+    @Builder.Default
     private boolean accountNonExpired = true;
+    @Builder.Default
     private boolean accountNonLocked = true;
+    @Builder.Default
     private boolean credentialsNonExpired = true;
+    @Builder.Default
     private boolean enabled = true;
 
     private String imageUrl;  // Changed to camelCase to match DTO naming conventions

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -168,7 +169,7 @@ public class EducationPlanService {
         if (years <= 0) return currentCost;
         double rate = inflationRate.doubleValue() / 100.0;
         double futureValue = currentCost.doubleValue() * Math.pow(1 + rate, years);
-        return BigDecimal.valueOf(futureValue).setScale(2, BigDecimal.ROUND_HALF_UP);
+        return BigDecimal.valueOf(futureValue).setScale(2, RoundingMode.HALF_UP);
     }
 
     public List<EducationPlan> findByFamilyProfile(FamilyProfile familyProfile) {

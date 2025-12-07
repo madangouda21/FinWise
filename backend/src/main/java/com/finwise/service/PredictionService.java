@@ -94,10 +94,11 @@ public class PredictionService {
 
             HttpEntity<Map<String, Object>> entity = new HttpEntity<>(allocationRequest, headers);
 
-            ResponseEntity<Map> response = restTemplate.postForEntity(
+            @SuppressWarnings("unchecked")
+            ResponseEntity<Map<String, Object>> response = restTemplate.postForEntity(
                     ALLOCATION_SERVICE_URL + "/allocate",
                     entity,
-                    Map.class
+                    (Class<Map<String, Object>>) (Class<?>) Map.class
             );
 
             if (response.getStatusCode() == HttpStatus.OK && response.getBody() != null) {

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 @Data
@@ -114,7 +115,7 @@ public class DashboardSummaryDTO {
     public Double getSavingsRate() {
         if (monthlyIncome != null && monthlyIncome.compareTo(BigDecimal.ZERO) > 0) {
             BigDecimal monthlySavings = monthlyIncome.subtract(monthlyExpenses);
-            return monthlySavings.divide(monthlyIncome, 4, BigDecimal.ROUND_HALF_UP)
+            return monthlySavings.divide(monthlyIncome, 4, RoundingMode.HALF_UP)
                     .multiply(BigDecimal.valueOf(100))
                     .doubleValue();
         }

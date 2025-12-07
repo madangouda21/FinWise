@@ -1,6 +1,5 @@
 package com.finwise.repository;
 
-import com.finwise.dto.FamilyProfileDTO;
 import com.finwise.entity.FamilyProfile;
 import com.finwise.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -71,10 +71,10 @@ To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-*   **Java 17+** and **Maven**
+*   **Java 21** and **Maven**
 *   **Node.js** and **npm**
 *   **Python** and **pip**
-*   A running **PostgreSQL** instance
+*   A running **MySQL** instance
 
 ### Installation & Setup
 

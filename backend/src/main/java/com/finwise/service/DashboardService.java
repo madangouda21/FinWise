@@ -3,7 +3,6 @@ package com.finwise.service;
 import com.finwise.dto.*;
 import com.finwise.entity.*;
 import com.finwise.repository.*;
-import com.finwise.util.DashboardMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -11,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
@@ -29,7 +27,6 @@ public class DashboardService {
     private final InvestmentPlanService investmentPlanService;
     private final PlanTransactionService planTransactionService;
     private final FamilyProfileRepository familyProfileRepository;
-    private final DashboardMapper dashboardMapper;
 
     public DashboardSummaryDTO getDashboardSummary(Long familyProfileId) {
         log.info("Generating dashboard summary for family profile ID: {}", familyProfileId);
